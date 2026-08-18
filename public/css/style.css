@@ -1,0 +1,479 @@
+:root {
+    --bg-dark: #0b0712;
+    --bg-card: #150d24;
+    --accent-purple: #a855f7;
+    --accent-violet: #7c3aed;
+    --accent-pink: #ec4899;
+    --accent-glow: rgba(168, 85, 247, 0.35);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: #f3e8ff !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Headings & Text Standard */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+p, label, span, .text-muted {
+    color: #d8b4fe !important;
+}
+
+/* Background Ambient Glow */
+.glow-bg {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(124, 58, 237, 0.2) 40%, rgba(236, 72, 153, 0.1) 60%, rgba(11, 7, 18, 0) 80%);
+    filter: blur(90px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Glassmorphism Navbar */
+.navbar-glass {
+    background: rgba(17, 10, 30, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* Gradients */
+.text-gradient-purple {
+    background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-neon-purple {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d946ef 100%);
+    color: #ffffff !important;
+    border: 1px solid rgba(192, 132, 252, 0.5);
+    box-shadow: 0 0 25px var(--accent-glow);
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-purple:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
+    color: #ffffff !important;
+}
+
+.btn-neon-outline-purple {
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #e9d5ff !important;
+    background: rgba(168, 85, 247, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-outline-purple:hover {
+    border-color: #c084fc;
+    color: #ffffff !important;
+    background: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Cards & Container */
+.card-tech {
+    background: rgba(21, 13, 36, 0.65);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.card-tech:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
+}
+
+.card-login {
+    background: rgba(21, 13, 36, 0.9);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+/* Custom Alerts */
+.custom-alert-danger {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border: 1px solid #ef4444 !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+
+.custom-alert-success {
+    background-color: rgba(34, 197, 94, 0.2) !important;
+    color: #4ade80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.4) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+
+/* Icon Box */
+.icon-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(168, 85, 247, 0.2);
+    color: #e9d5ff !important;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+/* Forms & Inputs */
+.form-label {
+    color: #e9d5ff !important;
+    font-weight: 500;
+}
+
+.form-control, .form-select {
+    background: rgba(11, 7, 18, 0.7) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    color: #ffffff !important;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+}
+
+.form-control::placeholder {
+    color: #a78bfa !important;
+    opacity: 0.7;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(11, 7, 18, 0.9) !important;
+    border-color: #c084fc !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
+}
+
+.form-select option {
+    background-color: #150d24;
+    color: #ffffff;
+}
+
+.input-group-text {
+    background: rgba(11, 7, 18, 0.7) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    color: #c084fc !important;
+}
+
+/* Links */
+.hover-purple {
+    color: #c084fc !important;
+    transition: all 0.2s ease;
+}
+
+.hover-purple:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+
+/* Tables */
+.table-custom {
+    color: #e9d5ff;
+    vertical-align: middle;
+}
+
+.table-custom th {
+    background: rgba(11, 7, 18, 0.85);
+    color: #c084fc !important;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.25);
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.table-custom td {
+    background: transparent;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+    padding: 1rem;
+}
+
+.table-custom tbody tr:hover td {
+    background: rgba(168, 85, 247, 0.08);
+}
+
+/* Badge Custom */
+.badge-masuk {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50rem;
+}
+
+.badge-keluar {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50rem;
+}
+
+/* Footer */
+footer {
+    background: #07040d;
+    border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+/* ============================================
+   CSS Khusus Halaman Dashboard (surat/index.blade.php)
+   Dipindahkan dari inline <style> agar terpusat di sini
+   ============================================ */
+
+/* CSS Card Statistik Besar & Proporsional */
+.card-stat {
+    background: rgba(22, 11, 38, 0.75) !important;
+    border: 1px solid rgba(168, 85, 247, 0.25) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 20px !important;
+    padding: 1.75rem 1.5rem !important;
+    transition: all 0.3s ease;
+}
+.card-stat:hover {
+    border-color: rgba(168, 85, 247, 0.6) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(168, 85, 247, 0.25);
+}
+.icon-box-lg {
+    width: 64px !important;
+    height: 64px !important;
+    font-size: 1.75rem !important;
+    border-radius: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* CSS Tabel Agenda Surat Terang & Kontras */
+.table-custom-container {
+    background: rgba(22, 11, 38, 0.75) !important;
+    border: 1px solid rgba(168, 85, 247, 0.25) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.table-custom-container .table-custom {
+    color: #f1f5f9 !important;
+    margin-bottom: 0;
+}
+.table-custom-container .table-custom thead th {
+    background: rgba(45, 21, 80, 0.6) !important;
+    color: #d8b4fe !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.8px;
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3) !important;
+}
+.table-custom-container .table-custom tbody td {
+    padding: 18px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.12) !important;
+    color: #e2e8f0 !important;
+    font-size: 0.92rem;
+}
+.table-custom-container .table-custom tbody tr:hover {
+    background-color: rgba(168, 85, 247, 0.08) !important;
+}
+.text-subtle-light {
+    color: #cbd5e1 !important;
+}
+
+/* Action Buttons (Edit & Hapus) */
+.btn-action-edit {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.btn-action-edit:hover {
+    background: #a855f7;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+.btn-action-delete {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.btn-action-delete:hover {
+    background: #ef4444;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+}
+
+/* Style Modal Cyber */
+.modal-cyber {
+    background: #180d2b !important;
+    border: 1px solid rgba(168, 85, 247, 0.4) !important;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* ============================================
+   Animasi Landing Page — Tetap Tema Cyber Neon Ungu
+   ============================================ */
+
+/* --- Scroll Reveal: elemen muncul fade-up saat discroll --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Delay bertahap untuk anak-anak dalam satu baris (efek cascade) */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.4s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+/* --- Animated Gradient Text (judul hero bergerak pelan) --- */
+.text-gradient-animated {
+    background: linear-gradient(90deg, #e9d5ff, #c084fc, #f472b6, #c084fc, #e9d5ff);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+}
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Floating Glow Orbs (partikel cahaya mengambang di background hero) --- */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+    animation: floatOrb 8s ease-in-out infinite;
+}
+.orb-1 {
+    width: 14px; height: 14px;
+    background: #c084fc;
+    top: 18%; left: 8%;
+    animation-duration: 7s;
+}
+.orb-2 {
+    width: 10px; height: 10px;
+    background: #f472b6;
+    top: 65%; left: 12%;
+    animation-duration: 9s;
+    animation-delay: 1.2s;
+}
+.orb-3 {
+    width: 18px; height: 18px;
+    background: #a855f7;
+    top: 25%; right: 10%;
+    animation-duration: 10s;
+    animation-delay: 0.6s;
+}
+.orb-4 {
+    width: 8px; height: 8px;
+    background: #e9d5ff;
+    top: 70%; right: 15%;
+    animation-duration: 6.5s;
+    animation-delay: 2s;
+}
+.orb-5 {
+    width: 12px; height: 12px;
+    background: #d946ef;
+    top: 45%; left: 45%;
+    animation-duration: 8.5s;
+    animation-delay: 1.6s;
+}
+@keyframes floatOrb {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+    50% { transform: translateY(-30px) translateX(10px); opacity: 1; }
+}
+
+/* --- Floating Icon Box (icon di dalam card ngambang pelan) --- */
+.icon-float {
+    animation: iconFloat 3.5s ease-in-out infinite;
+}
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* --- Pulse Glow untuk Badge Hero --- */
+.badge-pulse {
+    animation: badgePulse 2.5s ease-in-out infinite;
+}
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(168, 85, 247, 0); }
+}
+
+/* --- Counter angka statistik (efek muncul dengan scale) --- */
+.counter-value {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+.reveal.is-visible .counter-value {
+    animation: counterPop 0.5s ease;
+}
+@keyframes counterPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* --- Hormati preferensi user yang mematikan animasi --- */
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .text-gradient-animated, .floating-orb, .icon-float, .badge-pulse, .counter-value {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
